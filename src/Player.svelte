@@ -46,16 +46,3 @@
  
     </div>
 </div>
-
-<style>
-    .progress-container {
-        margin-left: 10%;
-        margin-right: 10%;
-        border: solid rgb(194, 194, 194) 5px;
-    }
-    .progress-bar {
-        height: 30px;
-        background-color: rgb(77, 199, 55);
-
-    }
-</style>

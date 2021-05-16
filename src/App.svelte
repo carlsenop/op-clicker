@@ -10,8 +10,15 @@
 </script>
 
 <main>
-	<h1 style='text-align: left;'>Gold: {$Gold}</h1>
+	<article>
+	<div class= "grid">
+		<h1 style = "color: hsl(50, 100%, 40%)" class="fattext gold">Gold: {$Gold}</h1>
+		<p></p>
+		<button>Store</button>
+	</div>
+
 	<Boss />
 	<Clicker />
 	<Xpbar />
+	</article>
 </main>

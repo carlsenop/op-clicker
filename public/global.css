@@ -1,3 +1,48 @@
 main {
+    width: auto;
     text-align: center;
+}
+
+.flex {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.gold {
+    border-style: solid;
+    padding: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    place-items: center;
+}
+
+button {
+    color: white;
+    background-color: coral;
+    padding: 10px 50px;
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-style: solid;
+    border: 20px;
+}
+.fattext {
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: hsl(0, 92%, 61%);
+}
+.bossimg {
+    width: 30%;
+}
+.progress-container {
+    margin-left: 30%;
+    margin-right: 30%;
+    border: solid rgb(194, 194, 194) 5px;
+}
+.progress-bar {
+    height: 30px;
+    background-color: rgb(77, 199, 55);
+
 }

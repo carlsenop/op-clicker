@@ -1,7 +1,8 @@
 <script>
-import { writable } from "svelte/store";
-
     import { Experience, BossHP, BossDeath } from "./stores/StatsStore.js";
+    import { tweened } from 'svelte/motion';
+    
+    const progress = tweened(0);
     let BossLevel = 1;
 
     function BossUp(){
@@ -13,6 +14,12 @@ import { writable } from "svelte/store";
         $Experience += 50;
         $BossDeath = true;
     }
+//<img src="boss.png" alt="boss">
+//<style>
+//    img {
+//        width: 50%;
+//    }
+//</style>
 
 </script>
 
@@ -21,14 +28,5 @@ import { writable } from "svelte/store";
     {Death()}
 {/if}
 
-<h1>Level: {BossLevel}</h1>
-<img src="boss.png" alt="boss">
-<h1>HP of Boss: {$BossHP}</h1>
-
-
-
-<style>
-    img {
-        width: 50%;
-    }
-</style>
+<h1 class = "fattext">Carls Level: {BossLevel}</h1>
+<h3>Boss HP: {$BossHP}</h3>
