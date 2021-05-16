@@ -5,6 +5,7 @@
 	import Clicker from "./Clickerbutton.svelte";
 	import Gold from "./stores/GoldStore.js";
 	import Boss from "./Boss.svelte";
+	import Xpbar from "./Player.svelte"
 
 </script>
 
@@ -12,4 +13,5 @@
 	<h1 style='text-align: left;'>Gold: {$Gold}</h1>
 	<Boss />
 	<Clicker />
+	<Xpbar />
 </main>

@@ -1,15 +1,18 @@
 <script>
-    import { Experience, BossHP } from "./stores/StatsStore.js";
-let BossLevel = 1;
+import { writable } from "svelte/store";
 
-function BossUp(){
-    BossLevel += 1;
-}
+    import { Experience, BossHP, BossDeath } from "./stores/StatsStore.js";
+    let BossLevel = 1;
 
-function Death() {
-    $BossHP = (BossLevel ** 2);
-    $Experience += 50;
-}
+    function BossUp(){
+        BossLevel += 1;
+    }
+
+    function Death() {
+        $BossHP = (BossLevel ** 2) + 10;
+        $Experience += 50;
+        $BossDeath = true;
+    }
 
 </script>
 
