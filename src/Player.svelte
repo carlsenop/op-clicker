@@ -1,5 +1,5 @@
 <script>
-    import { Experience, Level, ClickDmg, BossDeath,  } from "./stores/StatsStore.js";
+    import { Experience, Level, ClickDmg, BossDeath, AutoDmg  } from "./stores/StatsStore.js";
     import { tweened } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
     import  {writable } from 'svelte/store';
@@ -38,11 +38,18 @@
     {please()}
 {/if}
 
-<div>
-    <h1>Level: {$Level}</h1>
-</div>
-<div class="progress-container">
-    <div class ="progress-bar" style="width: {$Progress}%;">
- 
+<article style = "line-height: 0%">
+    <div class= "grid">
+        <p></p>
+        <h1 style = "color: hsl(111 73% 45%) "class ="semifattext">Level: {$Level}</h1>
+        <box style = "font-family: impact; border-style: solid; padding: 5px; color: green"> 
+            <p>Click Dmg: {$ClickDmg}</p> 
+            <p>Auto Dmg: {$AutoDmg}</p>
+        </box>
+	</div>
+    <div class="progress-container">
+        <div class ="progress-bar" style="width: {$Progress}%;">
+    
+        </div>
     </div>
-</div>
+</article>
