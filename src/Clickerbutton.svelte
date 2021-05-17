@@ -1,7 +1,7 @@
 <script>
 
     import Gold from "./stores/GoldStore.js";
-    import { ClickDmg, BossHP, BossDeath, AutoDmg } from "./stores/StatsStore.js";
+    import { ClickDmg, BossHP, BossDeath } from "./stores/StatsStore.js";
 
     let visable = false;
 
@@ -14,25 +14,16 @@
         setTimeout(function() {visable = false;}, 300)
     }
 
+    BossDeath.subscribe(value => {
+        if (value) {
+            setVisable();
+        }
+    }); 
+
 </script>
 
 
 <div>
-
-    {#if $BossDeath}
-        {setVisable()}
-    {/if}
-
-    {#if visable}
-        <img class ="bossimg" src="bosshit.png" alt="boss" on:click = {Clicked}>
-    {:else}
-        <img class ="bossimg" src="boss.png" alt="boss" on:click = {Clicked}>
-    {/if}
+    <img class="bossimg" src="{ visable ? 'bosshit.png' : 'boss.png' }" alt="boss" on:click = {Clicked}>
 
 </div>
-
-<style>
-
-    
-
-</style>

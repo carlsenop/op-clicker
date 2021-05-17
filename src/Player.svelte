@@ -1,42 +1,43 @@
 <script>
     import { Experience, Level, ClickDmg, BossDeath, AutoDmg  } from "./stores/StatsStore.js";
     import { tweened } from 'svelte/motion';
-    import { cubicOut } from 'svelte/easing';
-    import  {writable } from 'svelte/store';
 
     const Progress = tweened(0);
-    let RequiredXp = (100);
-    let XpLeft = (100);
-    $: XpLeft = (RequiredXp - $Experience);
+    let RequiredXp = 100;
+    $: XpLeft = RequiredXp - $Experience;
     
 
     function LevelUp() {
         $Level += 1;
-        $ClickDmg += + 1;
+        $ClickDmg += 1;
         $Experience = 0;
-        {CalcReqXp()}
+        CalcReqXp()
     }
 
     function CalcReqXp() {
         RequiredXp = (Math.ceil(RequiredXp ** 1.1));
 
     }
-    function please() {
-        $BossDeath = false;
+    function GiveXp() {
         $Progress = (((RequiredXp - XpLeft) / RequiredXp) * 100)
         if ($Progress >= 100)
             $Progress = 0;
+        $BossDeath = false;
     }
 
+    Experience.subscribe(value => {
+        if (value >= RequiredXp) {
+            LevelUp();
+        }
+    }); 
+
+     BossDeath.subscribe(value => {
+        if (value) {
+            GiveXp();
+        }
+    });  
+
 </script>
-
-{#if $Experience  >= RequiredXp}
-    {LevelUp()}
-{/if}
-
-{#if $BossDeath}
-    {please()}
-{/if}
 
 <article style = "line-height: 0%">
     <div class= "grid">

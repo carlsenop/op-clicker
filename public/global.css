@@ -31,7 +31,7 @@ main {
     place-items: center;
 }
 
-button {
+.shop {
     color: white;
     background-color: coral;
     padding: 10px 50px;
@@ -39,6 +39,9 @@ button {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border-style: solid;
     border: 20px;
+}
+.shop[disabled] {
+    background-color: grey;
 }
 .fattext {
     font-size: 3rem;
@@ -51,6 +54,7 @@ button {
 }
 .bossimg {
     width: 30%;
+    -webkit-user-drag: none;
 }
 .progress-container {
     margin-left: 0%;

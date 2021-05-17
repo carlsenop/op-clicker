@@ -10,18 +10,13 @@
         $Experience += 50;
         $BossDeath = true;
     }
-//<img src="boss.png" alt="boss">
-//<style>
-//    img {
-//        width: 50%;
-//    }
-//</style>
+
+    BossHP.subscribe(value => {
+        if (value <= 0) {
+        BossUp();
+        Death();
+        }
+    });
 
 </script>
-
-{#if $BossHP <= 0}
-    {BossUp()}
-    {Death()}
-{/if}
-
 
