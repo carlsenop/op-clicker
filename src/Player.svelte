@@ -18,13 +18,12 @@
         RequiredXp = RequiredXp ** 1.1;
 
     }
-    function GiveXp() {
+    function please() {
         $BossDeath = false;
         $Progress = (((RequiredXp - XpLeft) / RequiredXp) * 100)
         console.log($Progress);
-        if ($Progress >= 100) {
+        if ($Progress >= 100) 
             $Progress = 0;
-        }
     }
 
     Experience.subscribe(value => {
@@ -33,15 +32,11 @@
         }
     }); 
 
-      BossDeath.subscribe(value => {
-        if (value) {
-            GiveXp();
-        }
-    });
-
 </script>
 
-<h1>req xp: {RequiredXp} xp: {$Experience} xpleft: {XpLeft}</h1>
+{#if $BossDeath}
+    {please()}
+{/if}
 
 <article style = "line-height: 0%">
     <div class= "grid">
