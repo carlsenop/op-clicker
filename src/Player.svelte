@@ -20,8 +20,9 @@
     }
     function GiveXp() {
         $Progress = (((RequiredXp - XpLeft) / RequiredXp) * 100)
-        if ($Progress >= 100)
+        if ($Progress >= 100) {
             $Progress = 0;
+        }
         $BossDeath = false;
     }
 
