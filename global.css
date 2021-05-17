@@ -1,0 +1,68 @@
+.backy {
+    background-image: url("backy.gif");
+    background-size: cover;
+}
+
+main {
+    width: auto;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.gold {
+    border-style: solid;
+    padding: 5px;
+    -webkit-text-stroke: 3px;
+    -webkit-text-stroke-color: rgb(37, 37, 37);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    place-items: center;
+}
+.bottomgrid {
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    place-items: center;
+}
+
+.shop {
+    color: white;
+    background-color: coral;
+    padding: 10px 50px;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-style: solid;
+    border: 20px;
+}
+.shop[disabled] {
+    background-color: grey;
+}
+.fattext {
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: hsl(0, 92%, 61%);
+}
+.semifattext {
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.bossimg {
+    width: 30%;
+    -webkit-user-drag: none;
+}
+.progress-container {
+    margin-left: 0%;
+    margin-right: 0%;
+    border: solid rgb(194, 194, 194) 5px;
+}
+.progress-bar {
+    height: 30px;
+    background-color: rgb(77, 199, 55);
+
+}
