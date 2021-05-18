@@ -1,8 +1,9 @@
 {
-  "name": "svelte-app",
+  "name": "op-clicker",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
+    "deploy": "gh-pages -d public",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
@@ -20,5 +21,18 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
-  }
+  },
+  "description": "My first GitHub project and first game.",
+  "main": "rollup.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlsenop/op-clicker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlsenop/op-clicker/issues"
+  },
+  "homepage": "https://carlsenop.github.io/op-clicker"
 }
