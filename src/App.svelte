@@ -26,3 +26,9 @@
 			<div><Xpbar /></div>
 	</main>
 </body>
+
+<style>
+	.green {
+    color:rgb(0, 255, 76);
+}
+</style>

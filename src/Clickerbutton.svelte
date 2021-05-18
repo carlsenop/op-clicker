@@ -1,7 +1,7 @@
 <script>
 
     import Gold from "./stores/GoldStore.js";
-    import { ClickDmg, BossHP, BossDeath } from "./stores/StatsStore.js";
+    import { ClickDmg, BossHP, BossDeath, BossLevel, Experience } from "./stores/StatsStore.js";
 
     let visable = false;
 
@@ -20,10 +20,26 @@
         }
     }); 
 
+
+    function BossUp(){ 
+        $BossLevel += 1;
+    }
+
+    function Death() {
+        $BossHP = ($BossLevel ** 2) + 10;
+        $Experience += 50;
+        $BossDeath = true;
+    }
+
+    BossHP.subscribe(value => {
+        if (value <= 0) {
+        BossUp();
+        Death();
+        }
+    });
 </script>
 
 
 <div>
     <img class="bossimg" src="{ visable ? 'bosshit.png' : 'boss.png' }" alt="boss" on:click = {Clicked}>
-
 </div>

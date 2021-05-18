@@ -34,7 +34,3 @@
     on:click = "{buyDmg}">
     Buy 1 DMG!<br>Cost: {$Cost}
     </button>
-
-<style>
-
-</style>

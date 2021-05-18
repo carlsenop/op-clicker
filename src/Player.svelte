@@ -1,5 +1,5 @@
 <script>
-    import { Experience, Level, ClickDmg, BossDeath, AutoDmg  } from "./stores/StatsStore.js";
+    import { Experience, Level, ClickDmg, BossDeath } from "./stores/StatsStore.js";
     import { tweened } from 'svelte/motion';
 
     const Progress = tweened(0);
@@ -32,12 +32,14 @@
         }
     }); 
 
+    BossDeath.subscribe(value => {
+        if (value) {
+            console.log('banana')
+            please();
+        }
+    }); 
+
 </script>
-
-{#if $BossDeath}
-    {please()}
-{/if}
-
 
 
 <div class="progress-container">
